@@ -1,0 +1,27 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "name": "Krzysztof",
+            "age": 25,
+            "salaryInPLN": 5000
+        },
+        {
+            "id": 2,
+            "name": "Anna",
+            "age": 24,
+            "salaryInPLN": 10000
+        },
+        {
+            "id": 3,
+            "name": "Marek",
+            "age": 30,
+            "salaryInPLN": 5000
+        },
+        {
+            "id": 4,
+            "name": "Ewa",
+            "age": 22
+        }
+    ]
+}

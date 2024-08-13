@@ -1,0 +1,60 @@
+/* App container styling */
+.App {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Header styling */
+.App-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Header title styling */
+.App-header h1 {
+    margin: 12px 0;
+    font-size: 1.8em;
+}
+
+/* Select dropdown styling */
+.App-header select {
+    font-size: 1em;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+/* People list container styling */
+h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Person details styling */
+h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+p {
+    margin: 5px 0;
+    color: #555;
+}
