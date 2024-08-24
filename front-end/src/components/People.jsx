@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import { use, useMemo } from "react";
 import { Person } from "./Person";
 
-const BACK_END_URL = "http://localhost:3000";
-const getPeople = fetch(`${BACK_END_URL}/people`).then((res) => res.json());
+export function People({ endpoint }) {
+    const BACK_END_URL = "http://localhost:3000";
+    const getPeople = useMemo(
+        () => fetch(`${BACK_END_URL}/${endpoint}`).then((res) => res.json()),
+        [endpoint]
+    );
 
-export function People() {
-    const [people, setPeople] = useState([]);
-
-    useEffect(() => {
-        getPeople.then((data) => setPeople(data));
-    }, []);
+    const people = use(getPeople);
 
     return (
         <>

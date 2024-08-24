@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { use } from "react";
 import { CurrencyContext } from "../context/CurrencyContext";
 
 const getSalary = (salaryInPLN, currency) => {
@@ -10,7 +10,11 @@ const getSalary = (salaryInPLN, currency) => {
 };
 
 export function Person({ data }) {
-    const currency = useContext(CurrencyContext);
+    let currency = "";
+
+    if (data.salaryInPLN) {
+        currency = use(CurrencyContext);
+    }
 
     return (
         <>

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
 import { People } from "./components/People";
 import { CurrencyContext } from "./context/CurrencyContext";
@@ -7,7 +8,7 @@ function App() {
     const [currency, setCurrency] = useState("PLN");
 
     return (
-        <CurrencyContext.Provider value={currency}>
+        <CurrencyContext value={currency}>
             <div className="App">
                 <header className="App-header">
                     <h1>Aplikacja do zarządzania pracownikami</h1>
@@ -20,9 +21,13 @@ function App() {
                         <option value="USD">USD</option>
                     </select>
                 </header>
-                <People />
+                <ErrorBoundary fallback={<span>Błąd pobierania danych!</span>}>
+                    <Suspense fallback={<span>Ładowanie...</span>}>
+                        <People endpoint="people" />
+                    </Suspense>
+                </ErrorBoundary>
             </div>
-        </CurrencyContext.Provider>
+        </CurrencyContext>
     );
 }
 
