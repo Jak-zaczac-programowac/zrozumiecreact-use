@@ -1,4 +1,4 @@
-# Moduł 12 - React 19 - React compiler
+# Moduł 12 - React 19 - use
 
 Żeby wystartować projekt pobierz repo, a następnie w terminalu wywołaj:
 
