@@ -1,13 +1,10 @@
-import { use, useMemo } from "react";
+import { use } from "react";
 import { Person } from "./Person";
 
-export function People({ endpoint }) {
-    const BACK_END_URL = "http://localhost:3000";
-    const getPeople = useMemo(
-        () => fetch(`${BACK_END_URL}/${endpoint}`).then((res) => res.json()),
-        [endpoint]
-    );
+const BACK_END_URL = "http://localhost:3000";
+const getPeople = fetch(`${BACK_END_URL}/people`).then((res) => res.json());
 
+export function People() {
     const people = use(getPeople);
 
     return (

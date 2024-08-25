@@ -8,7 +8,7 @@ function App() {
     const [currency, setCurrency] = useState("PLN");
 
     return (
-        <CurrencyContext value={currency}>
+        <CurrencyContext.Provider value={currency}>
             <div className="App">
                 <header className="App-header">
                     <h1>Aplikacja do zarządzania pracownikami</h1>
@@ -23,11 +23,11 @@ function App() {
                 </header>
                 <ErrorBoundary fallback={<span>Błąd pobierania danych!</span>}>
                     <Suspense fallback={<span>Ładowanie...</span>}>
-                        <People endpoint="people" />
+                        <People />
                     </Suspense>
                 </ErrorBoundary>
             </div>
-        </CurrencyContext>
+        </CurrencyContext.Provider>
     );
 }
 
